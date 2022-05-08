@@ -29,4 +29,9 @@ public class circleTest {
             cr.setColorHSB(-100, 300, 20);
         });
     }
+    @Test 
+    void chheck()
+    {
+        
+    }
 }
