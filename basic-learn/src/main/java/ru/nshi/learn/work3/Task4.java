@@ -7,7 +7,6 @@ public class Task4 {
     public static void main(String[] args){
         Task4 task4 = new Task4();
         Task1 task1 = new Task1();
-
         int[][] array = task1.createMatrix(3);
         task1.randomFillingMatrix(array);
         task1.printMatrix(array);
