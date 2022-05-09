@@ -9,14 +9,13 @@ public class task2 {
     }
 
     public int summaAllLuckyNumbers() {
-        int summa = 0;
+        int sum = 0;
         task1 task = new task1();
         for (int i = 100000; i <= 999999; i++){
-            if (task.lucky(i) == true){
-                summa += i;
-            } else
-                continue;
+            if (task.lucky(i) == true) {
+                sum += i;
+            } 
         }
-        return summa;
+        return sum;
     }
 }

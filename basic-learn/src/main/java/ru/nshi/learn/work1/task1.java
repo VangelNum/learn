@@ -1,6 +1,6 @@
 package ru.nshi.learn.work1;
+
 import java.util.Scanner;
-import java.security.spec.RSAOtherPrimeInfo;
 
 /*Написать программу, которая определяет, является ли число «счастливым билетом».
  Осуществить проверку для шестизначных чисел. Число пользователь вводит с клавиатуры.
@@ -43,3 +43,4 @@ public class task1 {
         return flag;
     }
 }
+

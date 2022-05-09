@@ -10,7 +10,7 @@ public class Task3 {
         System.out.print("Введите число для проверки: ");
         int number = in.nextInt();
 
-        if(task3.simpleNumber(number) == true){
+        if(task3.simpleNumber(number) == false){
             System.out.println("Число является простым");
         } else
             System.out.println("Число не является простым");
@@ -23,12 +23,12 @@ public class Task3 {
             if (number % i == 0) {
                 counter++;
             }
+            if (counter > 2)
+            {
+                flag = true;
+                return flag;
+            }
         }
-        if (counter == 2) {
-            flag = true;
-        } else
-            flag = false;
-
         return flag;
     }
 }

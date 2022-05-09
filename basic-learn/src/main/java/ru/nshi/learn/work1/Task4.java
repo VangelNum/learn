@@ -9,13 +9,12 @@ public class Task4 {
 
     public int summaSimpleNumbers() {
         Task3 task3 = new Task3();
-        int summa = 0;
+        int sum = 0;
         for (int i = 1000; i <= 2000; i++) {
             if (task3.simpleNumber(i) == true) {
-                summa += i;
-            } else
-                continue;
+                sum += i;
+            } 
         }
-        return summa;
+        return sum;
     }
 }
