@@ -17,7 +17,7 @@ public class Task3 {
     }
 
     public boolean simpleNumber(int number) {
-        boolean flag = false;
+        boolean flag = true;
         int counter = 0;
         for (int i = 1; i <= number; i++) {
             if (number % i == 0) {
@@ -25,7 +25,7 @@ public class Task3 {
             }
             if (counter > 2)
             {
-                flag = true;
+                flag = false;
                 return flag;
             }
         }

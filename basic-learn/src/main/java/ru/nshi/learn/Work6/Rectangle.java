@@ -1,52 +1,25 @@
-package ru.nshi.learn.Work6;
-import java.util.Arrays;
-public class Rectangle extends GeometricFigure {
-    protected final double[] sides = new double[4];
+package ru.nshi.learn.work6;
 
-    public Rectangle(double[] sides){
-        if((sides[0] > 0 && sides[1] > 0 && sides[2] > 0 && sides[3] > 0) &&
-            (sides[0] == sides[2] && sides[1] == sides[3])) {
-            this.sides[0] = sides[0];
-            this.sides[1] = sides[1];
-            this.sides[2] = sides[2];
-            this.sides[3] = sides[3];
-            for(int i = 1; i < sides.length; i++){
-                if(this.sides[0] != this.sides[i] || i == 3){
-                    this.area = this.sides[0] * this.sides[i];
-                }
-            }
-        }
-        else{
-            throw new IllegalArgumentException();
-        }
+public class Rectangle extends Figure {
+    public double length;
+    public double width;
+
+    public Rectangle(double length,double width,Color color)
+    {
+        super(color);
+        if (length<=0 || width<=0) throw new IllegalArgumentException("negative values");
+        this.length=length;
+        this.width=width;
     }
 
-    /*public Rectangle(double[] sides) {
-        Arrays.sort(sides);
-        if ((sides[0] != sides[1]) || (sides[2] != sides[3]) || (sides[0] == sides[3]) || (sides[1] == sides[2])) {
-            throw new IllegalArgumentException();
-        }
-        else {
-            this.sides[0] = sides[0];
-            this.sides[1] = sides[1];
-            this.sides[2] = sides[2];
-            this.sides[3] = sides[3];
-            /*for(int i = 1; i < sides.length; i++) {
-                if (this.sides[0] != this.sides[i] || i == 3) {
-                    this.area = this.sides[0] * this.sides[i];
-                }
-            }
-            this.area = this.sides[0] * this.sides[3];
-        }
-    }*/
+    public double getArea(){return this.length * this.width;}
 
-    public double[] getSides(){
-        return sides;
-    }
+    public double getWidth(){return this.width;}
 
-    @Override
-    public String information(){
-        String str = super.information();
-        return str + "Длины сторон " + this.sides[0] + ", " + this.sides[1] + ", " + this.sides[2] + ", " + this.sides[3] + "\n";
+    public double getLength(){return this.length;}
+
+    public String toString()
+    {
+        return "length = "+this.getLength() +"\n"+ "width = "+this.getWidth()+"\n"+ "Area = "+this.getArea()+"\n";
     }
 }

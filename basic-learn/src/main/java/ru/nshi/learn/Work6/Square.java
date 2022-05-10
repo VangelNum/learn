@@ -1,14 +1,25 @@
-package ru.nshi.learn.Work6;
+package ru.nshi.learn.work6;
 
-public class Square extends Rectangle {
+public class Square extends Figure {
+    public  double sides;
 
-    public Square(double[] sides){
-        super(sides);
-        if(!(sides[0]==sides[1] && sides[1] == sides[2] && sides[2] == sides[3])) {
-            throw new IllegalArgumentException();
-        }
-        this.area = this.sides[0] * this.sides[0];
+    public Square(double sides, Color color){
+        super(color);
+        if (sides<=0) throw new IllegalArgumentException("Sides < 0");
+        this.sides=sides;
+    }
+    public double getArea(){
+            return this.sides * this.sides;
     }
 
+    public double getSides(){
+        return this.sides;
+    }
+
+    public String toString()
+    {
+        return "sides = "+this.getSides() +"\n"+ "Area = "+this.getArea()+"\n";
+    }
 
 }
+
