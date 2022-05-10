@@ -5,6 +5,7 @@ public class Circle extends GeometricFigure {
 
     public Circle(double diagonal,Colour colour)
     {
+        
         super(colour);
         if (diagonal<=0) throw new IllegalArgumentException("Неверное значение");
         this.diagonal=diagonal;
