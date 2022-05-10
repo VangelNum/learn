@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ColorTest_RGB {
@@ -15,7 +14,7 @@ public class ColorTest_RGB {
         assertThrows(IllegalArgumentException.class, () ->
         {
             Colour colour = new RGB(-1,-2,-3);
-            figure = new ru.nshi.learn.work6.GeometricFigure(colour);
+            figure = new GeometricFigure(colour);
             figure.setColor(colour);
         });
     }
@@ -25,7 +24,7 @@ public class ColorTest_RGB {
     void testConstructorColorThrows(int colour1, int colour2, int colour3) {
         assertThrows(IllegalArgumentException.class, () -> {
             Colour colour = new RGB(colour1,colour2,colour3);
-            figure = new ru.nshi.learn.work6.GeometricFigure(colour);
+            figure = new GeometricFigure(colour);
             figure.setColor(colour);
         });
     }
