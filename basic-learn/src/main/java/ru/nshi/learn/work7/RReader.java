@@ -1,4 +1,4 @@
-package ru.nshi.learn.Work7;
+package ru.nshi.learn.work7;
 
 import java.io.BufferedReader;
 import java.io.FileWriter;

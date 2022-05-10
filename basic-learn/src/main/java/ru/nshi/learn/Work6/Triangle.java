@@ -1,14 +1,14 @@
 package ru.nshi.learn.work6;
 
-public class Triangle  extends Figure {
+public class Triangle  extends GeometricFigure {
 
     public double sides1;
     public double sides2;
     public double sides3;
 
-    public Triangle (double sides1,double sides2,double sides3,Color color)
+    public Triangle (double sides1,double sides2,double sides3,Colour colour)
     {
-        super(color);
+        super(colour);
         if (sides1 <= 0 || sides2 <= 0 || sides3 <= 0 ) throw new IllegalArgumentException("negative values");
         this.sides1 = sides1;
         this.sides2 = sides2;

@@ -15,7 +15,7 @@ public class CircleTest {
 
         assertThrows(IllegalArgumentException.class, () ->
         {
-            Color color = new RGB(-1,-2,-3);
+            Colour color = new RGB(-1,-2,-3);
             circle = new ru.nshi.learn.work6.Circle(diagonal,color);
         });
     }
@@ -26,7 +26,7 @@ public class CircleTest {
     void testConstructorColorThrows(int color1, int color2, int color3) {
         double diagonal = 5;
         assertThrows(IllegalArgumentException.class, () -> {
-            Color color = new RGB(color1,color2,color3);
+            Colour color = new RGB(color1,color2,color3);
             circle = new ru.nshi.learn.work6.Circle(diagonal,color);
             circle.setColor(color);
         });
@@ -34,7 +34,7 @@ public class CircleTest {
     @ParameterizedTest
     @CsvSource({"6,28.26", "8,50.24"})
     void testGetArea(double diagonal,double expectedArea) {
-        Color color = new RGB(1,1,1);
+        Colour color = new RGB(1,1,1);
         circle = new Circle(diagonal,color);
         assertEquals(circle.getArea() , expectedArea);
     }

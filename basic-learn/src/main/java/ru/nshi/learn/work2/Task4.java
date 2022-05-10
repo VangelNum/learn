@@ -1,65 +1,21 @@
 package ru.nshi.learn.work2;
 
 public class Task4 {
-    public static void main(String[] args){
-        Task4 task4 = new Task4();
+    public static void main(String[] args) {
         Task1 task1 = new Task1();
+        Task3 task3 = new Task3();
 
-        int[][] array = task1.createMatrix();
-        task1.randomFillingMatrix(array);
-        task1.printMatrix(array);
-
+        int[] array = task1.createArray(10);
+        array = task1.fillArrayByRandom(array, 10,99);
+        task1.printArray(array);
+        int max = task3.getMax(array);
         System.out.println();
-
-        int[] buffArray = task4.matrixConvertToArray(array);
-
-        task4.selectionSort(buffArray);
-
-        int[][] sortArray = task4.convertArrayToMatrix(buffArray, array);
-        task1.printMatrix(sortArray);
-
-
+        System.out.println("Максимальное значение = " + array[max]);
+        int min = task3.getMin(array);
+        System.out.println("Минимальное значение = " + array[min]);
+        int repl = array[max];
+        array[max] = array[min];
+        array[min] = repl;
+        task1.printArray(array);
     }
-
-    public int[] matrixConvertToArray(int[][] array){
-        int[] buffArray = new int[array[0].length * array.length];
-        int index = 0;
-        for (int i = 0; i < array.length; i++){
-            for (int j = 0; j < array[i].length; j++){
-                buffArray[index] = array[i][j];
-                index++;
-            }
-        }
-        return buffArray;
-    }
-
-    public int[] selectionSort(int[] buffArray){
-        for (int i = 0; i < buffArray.length; i++){
-            int min = buffArray[i];
-            int minIndex = i;
-            for (int j = i+1; j < buffArray.length; j++){
-                if (buffArray[j] < min){
-                    min = buffArray[j];
-                    minIndex = j;
-                }
-            }
-            int buff = buffArray[i];
-            buffArray[i] = min;
-            buffArray[minIndex] = buff;
-        }
-    return buffArray;
-    }
-
-    public int[][] convertArrayToMatrix(int[] buffArray, int[][] array ){
-        int[][] sortArray =  new int[array[0].length][array.length];
-        int index = 0;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                sortArray[i][j] = buffArray[index];
-                index++;
-            }
-        }
-        return sortArray;
-    }
-
 }

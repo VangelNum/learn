@@ -1,4 +1,4 @@
-package ru.nshi.learn.Work7;
+package ru.nshi.learn.work7;
 
 public class CarMaker {
     String maker;

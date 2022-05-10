@@ -13,7 +13,7 @@ public class Task1 {
 
     public String inputString(){
         Scanner in = new Scanner(System.in);
-        System.out.print("Input String: ");
+        System.out.print("Введите строку: ");
         String str = in.nextLine();
         return str;
     }

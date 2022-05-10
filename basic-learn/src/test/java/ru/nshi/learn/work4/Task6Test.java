@@ -1,10 +1,9 @@
-package ru.nshi.learn.work4Test;
+package ru.nshi.learn.work4;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.nshi.learn.work4.Task6;
 
 import static org.junit.jupiter.api.Assertions.*;
-//work 4, task6 test
+
 public class Task6Test {
     Task6 task6;
 
@@ -13,9 +12,9 @@ public class Task6Test {
 
     @Test
     void testMaxUniqueSymbols(){
-        String[] strings = {"Hello", "world", "!!!"};
+        String[] strings = {"Anna", "12334", "Pasyuga"};
         String resultStr = task6.maxUniqueSymbolsInString(strings);
-        String expectedStr = "world";
+        String expectedStr = "Pasyuga";
         assertEquals(resultStr, expectedStr);
     }
 }

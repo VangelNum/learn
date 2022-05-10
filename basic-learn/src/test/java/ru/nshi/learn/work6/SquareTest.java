@@ -15,27 +15,27 @@ public class SquareTest {
         double number = -5;
         assertThrows(IllegalArgumentException.class, () ->
         {
-            Color color = new RGB(-1,-2,-3);
-            square = new ru.nshi.learn.work6.Square(number,color);
+            Colour colour = new RGB(-1,-2,-3);
+            square = new ru.nshi.learn.work6.Square(number,colour);
         });
     }
 
 
     @ParameterizedTest
     @CsvSource({"-1,2,3","1,-1,3","1,2,-1","257,2,3","1,258,3","1,2,259"})
-    void testConstructorColorThrows(int color1, int color2, int color3) {
+    void testConstructorColorThrows(int colour1, int colour2, int colour3) {
         double number = 5;
         assertThrows(IllegalArgumentException.class, () -> {
-            Color color = new RGB(color1,color2,color3);
-            square = new ru.nshi.learn.work6.Square(number,color);
-            square.setColor(color);
+            Colour colour = new RGB(colour1,colour2,colour3);
+            square = new ru.nshi.learn.work6.Square(number,colour);
+            square.setColor(colour);
         });
     }
     @ParameterizedTest
     @CsvSource({"2,4", "3,9"})
     void testGetArea(double length, double expectedArea) {
-        Color color = new RGB(1,1,1);
-        square = new Square(length,color);
+        Colour colour = new RGB(1,1,1);
+        square = new Square(length,colour);
         assertEquals(square.getArea() , expectedArea);
     }
 }

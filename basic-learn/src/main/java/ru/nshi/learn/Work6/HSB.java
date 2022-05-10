@@ -1,6 +1,6 @@
 package ru.nshi.learn.work6;
 
-public class HSB extends Color {
+public class HSB extends Colour {
     int hue;
     int saturation;
     int brightness;

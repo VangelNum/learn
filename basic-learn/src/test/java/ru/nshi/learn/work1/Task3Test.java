@@ -1,9 +1,8 @@
-package ru.nshi.learn.work1Test;
+package ru.nshi.learn.work1;
 //work 1, task3 test
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
-import ru.nshi.learn.work1.Task3;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,16 +13,16 @@ public class Task3Test {
     void setUp() {task3 = new Task3();}
 
     @ParameterizedTest
-    @ValueSource(ints = {17, 13, 3})
+    @ValueSource(ints = {7, 11, 19})
     void testIsSimple(int number){
-        boolean actual = task3.simpleNumber(number);
+        boolean actual = task3.primeNumber(number);
         assertTrue(actual);
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {6, 14, 28})
+    @ValueSource(ints = {8, 16, 64})
     void testIsNotSimple(int number){
-        boolean actual = task3.simpleNumber(number);
+        boolean actual = task3.primeNumber(number);
         assertFalse(actual);
     }
 }

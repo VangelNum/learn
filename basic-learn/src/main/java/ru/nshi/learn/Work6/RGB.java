@@ -1,6 +1,6 @@
 package ru.nshi.learn.work6;
 
-public class RGB extends Color {
+public class RGB extends Colour {
     int red;
     int green;
     int blue;

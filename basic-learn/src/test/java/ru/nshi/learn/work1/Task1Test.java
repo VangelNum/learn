@@ -1,44 +1,43 @@
-package ru.nshi.learn.work1Test;
-//work 1, task1 test
+package ru.nshi.learn.work1;
+//work 1, Task1 test
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
-import ru.nshi.learn.work1.task1;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Task1Test {
-    task1 task;
+    Task1 task;
 
     @BeforeEach
     void setUp() {
-        task = new task1();
+        task = new Task1();
     }
 
     @Test
     void testIsLucky(){
-        boolean actual = task.lucky(123321);
+        boolean actual = task.luckyNumber(456654);
         assertTrue(actual);
     }
 
     @Test
     void testIsNotLucky(){
-        boolean actual = task.lucky(123124);
+        boolean actual = task.luckyNumber(456874);
         assertFalse(actual);
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {666666, 101002, 163163})
+    @ValueSource(ints = {333333, 777777, 111111})
     void testIsLuckyParameterized(int number){
-        boolean actual = task.lucky(number);
+        boolean actual = task.luckyNumber(number);
         assertTrue(actual);
     }
 
     @ParameterizedTest
     @ValueSource(ints = {626666, 101032, 163063})
     void testIsNotLuckyParameterized(int number){
-        boolean actual = task.lucky(number);
+        boolean actual = task.luckyNumber(number);
         assertFalse(actual);
     }
 }

@@ -1,21 +1,20 @@
-package ru.nshi.learn.work4Test;
+package ru.nshi.learn.work4;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
-import ru.nshi.learn.work4.Task1;
 
 import static org.junit.jupiter.api.Assertions.*;
-//work 4, task1 test
+
 public class Task1Test {
-    Task1 task1;
+    ru.nshi.learn.work4.Task1 task1;
 
     @BeforeEach
-    void setUp(){task1 = new Task1();}
+    void setUp(){task1 = new ru.nshi.learn.work4.Task1();}
 
     @ParameterizedTest
-    @CsvSource({"0,M", "1,Ma", "2,Max", "3,Maxi","4,Maxim"})
+    @CsvSource({"0,T", "1,Ta", "2,Tas", "3,Task","4,Task1"})
     void testIsCorrectStings(int index, String actual){
-        String[] resultes = task1.stringArray("Maxim");
+        String[] resultes = task1.stringArray("Task1");
         assertEquals(actual, resultes[index]);
     }
 }

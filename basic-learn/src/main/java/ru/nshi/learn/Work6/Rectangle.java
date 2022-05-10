@@ -1,10 +1,10 @@
 package ru.nshi.learn.work6;
 
-public class Rectangle extends Figure {
+public class Rectangle extends GeometricFigure {
     public double length;
     public double width;
 
-    public Rectangle(double length,double width,Color color)
+    public Rectangle(double length,double width,Colour color)
     {
         super(color);
         if (length<=0 || width<=0) throw new IllegalArgumentException("negative values");
