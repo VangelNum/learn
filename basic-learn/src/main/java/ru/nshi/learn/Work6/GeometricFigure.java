@@ -1,7 +1,7 @@
 package ru.nshi.learn.work6;
 
 public class  GeometricFigure {
-    public Colour colour;
+    private Colour colour;
 
     public GeometricFigure(Colour colour){
         this.colour=colour;

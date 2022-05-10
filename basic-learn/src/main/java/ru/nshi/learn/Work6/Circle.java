@@ -1,7 +1,7 @@
 package ru.nshi.learn.work6;
 
 public class Circle extends GeometricFigure {
-    public double diagonal ;
+    private double diagonal ;
 
     public Circle(double diagonal,Colour colour)
     {

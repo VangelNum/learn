@@ -1,8 +1,8 @@
 package ru.nshi.learn.work6;
 
 public class Rectangle extends GeometricFigure {
-    public double length;
-    public double width;
+    private double length;
+    private double width;
 
     public Rectangle(double length,double width,Colour color)
     {
