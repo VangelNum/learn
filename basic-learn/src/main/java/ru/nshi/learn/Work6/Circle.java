@@ -1,12 +1,12 @@
 package ru.nshi.learn.work6;
 
-public class Circle extends Figure {
+public class Circle extends GeometricFigure {
     public double diagonal ;
 
-    public Circle(double diagonal,Color color)
+    public Circle(double diagonal,Colour colour)
     {
-        super(color);
-        if (diagonal<=0) throw new IllegalArgumentException("negative values");
+        super(colour);
+        if (diagonal<=0) throw new IllegalArgumentException("Неверное значение");
         this.diagonal=diagonal;
     }
 
@@ -21,6 +21,6 @@ public class Circle extends Figure {
 
     public String toString()
     {
-        return "diagonal = "+this.getDiagonal() +"\n"+"Area = "+this.getArea() +"\n";
+        return "Диагональ = "+this.getDiagonal() +"\n"+"Площадь = "+this.getArea() +"\n";
     }
 }

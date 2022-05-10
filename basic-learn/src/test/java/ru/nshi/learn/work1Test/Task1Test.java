@@ -29,7 +29,7 @@ public class Task1Test {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {666666, 101002, 163163})
+    @ValueSource(ints = {666666, 222222, 111111})
     void testIsLuckyParameterized(int number){
         boolean actual = task.lucky(number);
         assertTrue(actual);

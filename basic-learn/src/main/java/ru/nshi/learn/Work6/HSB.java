@@ -1,6 +1,6 @@
 package ru.nshi.learn.work6;
 
-public class HSB extends Color {
+public class HSB extends Colour {
     int hue;
     int saturation;
     int brightness;
@@ -14,7 +14,7 @@ public class HSB extends Color {
     @Override
     public String toString()
     {
-        return "hue = "+hue +"\n"+ "saturation = "+saturation +"\n"+ "brightness = "+brightness;
+        return "оттенок = "+hue +"\n"+ "насыщенность = "+saturation +"\n"+ "яркость = "+brightness;
     }
 
     @Override

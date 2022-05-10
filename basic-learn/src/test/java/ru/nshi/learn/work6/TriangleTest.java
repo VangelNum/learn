@@ -17,8 +17,8 @@ public class TriangleTest {
 
         assertThrows(IllegalArgumentException.class, () ->
         {
-            Color color = new RGB(-1,-2,-3);
-            triangle = new ru.nshi.learn.work6.Triangle(sides1,sides2,sides3,color);
+            Colour colour = new RGB(-1,-2,-3);
+            triangle = new ru.nshi.learn.work6.Triangle(sides1,sides2,sides3,colour);
         });
     }
 
@@ -31,17 +31,17 @@ public class TriangleTest {
         double sides3 = 20;
         assertThrows(IllegalArgumentException.class, () ->
         {
-            Color color = new RGB(color1,color2,color3);
-            triangle = new ru.nshi.learn.work6.Triangle(sides1,sides2,sides3,color);
-            triangle.setColor(color);
+            Colour colour = new RGB(color1,color2,color3);
+            triangle = new ru.nshi.learn.work6.Triangle(sides1,sides2,sides3,colour);
+            triangle.setColor(colour);
         }
         );
     }
     @ParameterizedTest
     @CsvSource({"3,4,5,6", "1,2,3,0"})
     void testGetArea(int sides1,int sides2,int sides3, int expectedArea) {
-        Color color = new RGB(1,1,1);
-        triangle = new Triangle(sides1,sides2,sides3,color);
+        Colour colour = new RGB(1,1,1);
+        triangle = new Triangle(sides1,sides2,sides3,colour);
         assertEquals(triangle.getArea() , expectedArea);
     }
 }

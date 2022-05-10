@@ -8,25 +8,25 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ColorTest_RGB {
-    Figure figure;
+    GeometricFigure figure;
 
     @Test
     void testConstructor(){
         assertThrows(IllegalArgumentException.class, () ->
         {
-            Color color = new RGB(-1,-2,-3);
-            figure = new ru.nshi.learn.work6.Figure(color);
-            figure.setColor(color);
+            Colour colour = new RGB(-1,-2,-3);
+            figure = new ru.nshi.learn.work6.GeometricFigure(colour);
+            figure.setColor(colour);
         });
     }
 
     @ParameterizedTest
     @CsvSource({"-1,2,3","1,-1,3","1,2,-1","257,2,3","1,258,3","1,2,259"})
-    void testConstructorColorThrows(int color1, int color2, int color3) {
+    void testConstructorColorThrows(int colour1, int colour2, int colour3) {
         assertThrows(IllegalArgumentException.class, () -> {
-            Color color = new RGB(color1,color2,color3);
-            figure = new ru.nshi.learn.work6.Figure(color);
-            figure.setColor(color);
+            Colour colour = new RGB(colour1,colour2,colour3);
+            figure = new ru.nshi.learn.work6.GeometricFigure(colour);
+            figure.setColor(colour);
         });
     }
 }
