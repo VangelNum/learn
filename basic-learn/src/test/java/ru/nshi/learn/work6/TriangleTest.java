@@ -18,7 +18,7 @@ public class TriangleTest {
         assertThrows(IllegalArgumentException.class, () ->
         {
             Colour colour = new RGB(-1,-2,-3);
-            triangle = new ru.nshi.learn.work6.Triangle(sides1,sides2,sides3,colour);
+            triangle = new Triangle(sides1,sides2,sides3,colour);
         });
     }
 
@@ -32,7 +32,7 @@ public class TriangleTest {
         assertThrows(IllegalArgumentException.class, () ->
         {
             Colour colour = new RGB(color1,color2,color3);
-            triangle = new ru.nshi.learn.work6.Triangle(sides1,sides2,sides3,colour);
+            triangle = new Triangle(sides1,sides2,sides3,colour);
             triangle.setColor(colour);
         }
         );

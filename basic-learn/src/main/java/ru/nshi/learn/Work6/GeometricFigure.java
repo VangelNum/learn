@@ -1,18 +1,18 @@
 package ru.nshi.learn.work6;
 
 public class  GeometricFigure {
-    private Colour colour;
+    public Color color;
 
-    public GeometricFigure(Colour colour){
-        this.colour=colour;
+    public GeometricFigure(Color color){
+        this.color=color;
     }
 
-    public Colour getColor() {
-        return colour;
+    public Color getColor() {
+        return color;
     }
-    void setColor(Colour colour){
-        boolean flag = colour.isColor();
-        if (!flag) throw new IllegalArgumentException("Неверное значение цвета");
-        this.colour=colour;
+    void setColor(Color color){
+        boolean flag = color.isColor();
+        if (!flag) throw new IllegalArgumentException("wrong color value");
+        this.color=color;
     }
 }
