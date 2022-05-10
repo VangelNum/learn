@@ -1,41 +1,52 @@
 package ru.nshi.learn.work2;
 
+//ЗАДАНИЕ 3: Осуществить проверку двумерного массива на "магический квадрат".
+
 public class Task3 {
-    public static void main(String[] args) {
-        Task3 task = new Task3();
+    public static void main(String[] args){
+        Task3 task3 = new Task3();
         Task1 task1 = new Task1();
-        int[] array = task1.createArray(10);
-        array = task1.fillArrayByRandom(array, 10, 99);
-        task1.printArray(array);
-        int max = getMax(array);
+
+        int[][] array = task1.createMatrix();
+        task1.randomFillingMatrix(array);
+        task1.printMatrix(array);
+
         System.out.println();
-        System.out.println("Максимальное значение = " + array[max]);
-        int min = getMin(array);
-        System.out.println("Минимальное значение = " + array[min]);
+        System.out.println("Сумма элементов главной диагонали = " + task3.sumMainDiagonal(array));
+        System.out.println("Сумма элементов побочной диагонали = " + task3.sumCollateralDiagonal(array));
+        task3.magicMatrix(task3.sumMainDiagonal(array), task3.sumCollateralDiagonal(array));
     }
 
-    public static int getMax(int[] array) {
-        int maxNumber = array[0];
-        int maxI = 0;
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] > maxNumber) {
-                maxNumber = array[i];
-                maxI = i;
+    public int sumMainDiagonal (int[][] array){
+        int sumMain = 0; int element = -1;
+        for (int i = 0; i < array.length; i++){
+            element++;
+            for (int j = element; j < array[i].length;){
+                sumMain += array[i][j];
+                break;
             }
         }
-        return maxI;
+        return sumMain;
     }
 
-    public static int getMin(int[] array) {
-        int minI = 0;
-        int minNumber = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < minNumber) {
-                minNumber = array[i];
-                minI = i;
+    public int sumCollateralDiagonal(int[][] array){
+        int sumCollateral = 0; int element = array.length; ;
+        for (int i = 0; i < array.length; i++){
+            element--;
+            for (int j = element; j >= 0; j--){
+                sumCollateral += array[i][j];
+                break;
             }
         }
-        return minI;
+        return sumCollateral;
     }
 
+    public void magicMatrix(int sumMain, int SumCollateral){
+        boolean flag = false;
+        if (sumMain == SumCollateral){
+            flag = true;
+            System.out.println("Матрица является магической!");
+        } else
+            System.out.println("Матрица не является магической!");
+    }
 }
